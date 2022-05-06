@@ -1,0 +1,27 @@
+// SettingsGoogle static lib
+java_import {
+    name: "libSettingsGoogle",
+    sdk_version: "32",
+    jars: ["settings/libSettingsGoogle.jar"],
+}
+
+// SystemUIGoogle static lib
+java_import {
+    name: "libSystemUIGoogle",
+    sdk_version: "32",
+    jars: ["systemui/libSystemUIGoogle.jar"],
+}
+
+// Pixelatoms proto for Settings/SystemUI
+java_library {
+    name: "pixelatoms-google-java",
+    sdk_version: "current",
+    proto: {
+        type: "lite",
+    },
+    srcs: [
+        "proto/pixelatoms-google.proto",
+    ],
+    static_libs: ["libprotobuf-java-nano"],
+    vendor: true,
+}
